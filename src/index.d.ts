@@ -1,5 +1,6 @@
 interface ITodo {
   id: number;
-  wallet: string;
-  isDeposited: boolean;
+  content: string;
+  isDone: boolean;
 }
+//항복!
