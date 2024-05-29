@@ -25,7 +25,8 @@ const App: FC = () => {
   const [todos, setTodos] = useState<ITodo[]>(sampleData);
 
   return (
-    <Flex flexDir="column" minH="100vh">
+    <Flex flexDir="column" minH="100vh" bgColor={"yellow.400"}>
+      화이트리스트 등록
       <CreateTodo todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} />
     </Flex>
