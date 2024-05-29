@@ -1,11 +1,35 @@
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import { FC, useState } from "react";
+import CreateTodo from "./components/CreateTodo";
+import TodoList from "./components/TodoList";
 
-function App() {
+const sampleData: ITodo[] = [
+  {
+    id: 1,
+    content: "SCam78L8SLRPAXgBAHNAR3NN2KWU6EpyPp91qkYC3Em",
+    isDone: false,
+  },
+  {
+    id: 2,
+    content: "SCame5XVxvp5zhczNjtvtmqQDXwdZNBTnGAE1gTmm7v",
+    isDone: false,
+  },
+  {
+    id: 3,
+    content: "ScamVRJbani7kZovTMyvTCdwad8JFYB6Zcx2pVvjmoW",
+    isDone: false,
+  },
+];
+
+const App: FC = () => {
+  const [todos, setTodos] = useState<ITodo[]>(sampleData);
+
   return (
-    <ChakraProvider>
-      <Box>헬로우</Box>
-    </ChakraProvider>
+    <Flex flexDir="column" minH="100vh">
+      <CreateTodo todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} />
+    </Flex>
   );
-}
+};
 
 export default App;
