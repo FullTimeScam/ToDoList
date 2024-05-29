@@ -8,7 +8,7 @@ interface CreateTodoProps {
 
 const CreateTodo: FC<CreateTodoProps> = ({ todos, setTodos }) => {
   const [currentTodoId, setCurrentTodoId] = useState<number>(
-    todos[todos.length - 1].id
+    todos[todos.length - 1]?.id
   );
   const [content, setContent] = useState<string>("");
 
@@ -32,7 +32,11 @@ const CreateTodo: FC<CreateTodoProps> = ({ todos, setTodos }) => {
       justifyContent="center"
       alignItems="center"
     >
-      <Input value={content} onChange={(e) => setContent(e.target.value)} />
+      <Input
+        maxW={328}
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+      />
       <Button ml={2} colorScheme="teal" onClick={onClickCreateTodo}>
         주소 추가
       </Button>

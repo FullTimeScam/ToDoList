@@ -17,7 +17,7 @@ const sampleData: ITodo[] = [
   {
     id: 3,
     content: "ScamVRJbani7kZovTMyvTCdwad8JFYB6Zcx2pVvjmoW",
-    isDone: false,
+    isDone: true,
   },
 ];
 
@@ -28,7 +28,7 @@ const App: FC = () => {
     <Flex flexDir="column" minH="100vh" bgColor={"yellow.400"}>
       화이트리스트 등록
       <CreateTodo todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </Flex>
   );
 };
